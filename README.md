@@ -22,13 +22,13 @@ Dockerfile for Delft3d Tagged version 6906
 3. Get Dockerfile from Docker hub and place in the main directory with the Delft3d tagged version.
   *This should be done manually then select one of the two below options*
 
-	-Option 1: Stay in the main directory and "Build" docker image of version 6906 and save it as "delft3d:6906"
+	- Option 1: Stay in the main directory and "Build" docker image of version 6906 and save it as "delft3d:6906"
 		
 		```
 		docker build -t delft3d:6906 .
 		```
 
-	-#Option 2: Pull image from dockerhub.
+	- Option 2: Pull image from dockerhub.
 		
 		```
 		docker pull dukemoose/delft3d
