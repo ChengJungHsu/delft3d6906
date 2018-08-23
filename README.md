@@ -39,6 +39,12 @@ Dockerfile for Delft3d Tagged version 6906
 	```
 	docker run -ti -v ~/Documents/Docker/Delft3d/deltares-delft3d/funny_logs6906:/delft3d/src/logs delft3d:6906 /bin/bash 
 	```
+	
+	or using the below inputs the user loada all files in a parent working directory into the container. Results will be saved in the PWD accordingly. Adjust directory location of d_hydro.exe could be required.
+	
+	```
+	docker run -ti -v $(pwd):/home dukemoose/delft3d:6906
+	```
 
 5. Navigate to desired input file, change file permissions and run.
 *Note: Change permissions step not included here, but should be done manually.*
