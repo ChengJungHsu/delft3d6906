@@ -1,4 +1,4 @@
-#Docker file to create Docker Image for Delft3d 6906
+#Docker file to create Docker Image for Delft3d 6906. Big shout out to Nerdalize for a great template.
 #This requires the user to d/l Delft3d 6906 and save it in the directory where this Dockerfile resides.
 #delft3d: section is where the Delft3D version folder is called.
 
