@@ -26,4 +26,5 @@ docker run -ti -v ~/Documents/Docker/Delft3d/deltares-delft3d/funny_logs6906:/de
 
 # Navigate to desired input file, change file permissions and run.
 *Change permissions step not included here, but should be done manually.*
+
 ./run_file_name.sh
