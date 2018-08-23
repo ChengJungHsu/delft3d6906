@@ -11,13 +11,15 @@ wget --user=[User_name] --password=[User_password] -r --no-parent https://svn.os
 mv ~/Documents/Delft3d/svn.oss.deltares.nl/repos/delft3d/tags/delft3d4/* ~/Documents/Delft3d/
 
 
-# Get Dockerfile from github and place in directory with Delft3d tagged version.
-
+### Get Dockerfile from github and place in directory with Delft3d tagged version.
+*Do this manually*
 
 *Option 1 - Stay in the main directory and "Build" docker image of version 6906 and save it as "delft3d:6906"*
+
 docker build -t delft3d:6906 .
 
 *Option 2 - Pull image from Docker repository*
+
 docker pull dukemoose/delft3d
 
 
