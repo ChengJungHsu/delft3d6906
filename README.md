@@ -31,7 +31,7 @@ Dockerfile for Delft3d Tagged version 6906
 	- Option 2: Pull image from dockerhub.
 		
 		```
-		docker pull dukemoose/delft3d
+		docker pull dukemoose/delft3d:6906
 		```
 
 4. Run docker image "delft3d:6906" and save log files on local machine @ "~/Documents/Docker/Delft3d/deltares-delft3d/funny_logs6906"
