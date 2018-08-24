@@ -37,7 +37,7 @@ Dockerfile for Delft3d Tagged version 6906
 4. Run docker image "delft3d:6906", load files from parent working directory $(pwd) into the container location "/home". Create "log" directory in PWD to store Delft3d log files. Results will be saved in the PWD accordingly. Adjust directory location of d_hydro.exe in Delft3d run scripts could be required.
 	
 	```
-	docker run -ti -v $(pwd):/home dukemoose/delft3d:6906 -v $(pwd)/logs:/delft3d/src/logs delft3d:6906 /bin/bash 
+	docker run -ti -v $(pwd):/home -v $(pwd)/logs:/delft3d/src/logs dukemoose/delft3d:6906 /bin/bash 
 	```
 	
 5. Navigate to desired input file, change file permissions and run.
