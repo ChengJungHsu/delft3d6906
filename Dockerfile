@@ -36,12 +36,12 @@ RUN wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4/hdf5-${v}.tar.gz \
     && ./configure --enable-shared --enable-hl --prefix=$HDF5_DIR \
     && make -j 2 \
     && make install
-
 #netcdf
 ENV v=4.4.1
 ENV NETCDF4_DIR="/root/Downloads/libraries/netcdf_4.4"
-RUN wget http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-${v}.tar.gz \
-    && tar -xf netcdf-${v}.tar.gz && cd netcdf-${v} \
+##RUN wget http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-${v}.tar.gz \
+RUN wget -c https://github.com/Unidata/netcdf-c/archive/refs/tags/v${v}.tar.gz -O netcdf-c-${v}.tar.gz \
+    && tar -xf netcdf-c-${v}.tar.gz && cd netcdf-c-${v} \
     && CPPFLAGS=-I$HDF5_DIR/include LDFLAGS=-L$HDF5_DIR/lib ./configure --enable-netcdf-4 --enable-shared --enable-dap --prefix=$NETCDF4_DIR \
     && make \
     && make install
@@ -52,7 +52,7 @@ ENV PKG_CONFIG_PATH=$NETCDF4_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 
 #netcdf fortran
 ENV v=4.4.4
-RUN wget http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-fortran-${v}.tar.gz \
+RUN wget https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v${v}.tar.gz  -O netcdf-fortran-${v}.tar.gz\
     && tar -xf netcdf-fortran-${v}.tar.gz \
     && cd netcdf-fortran-${v} \
     && CPPFLAGS=-I$NETCDF4_DIR/include LDFLAGS=-L$NETCDF4_DIR/lib LD_LIBRARY_PATH=$NETCDF4_DIR/lib:$LD_LIBRARY_PATH ./configure --prefix=$NETCDF4_DIR \
@@ -76,7 +76,8 @@ ENV PKG_CONFIG_PATH=$MPICH2_3_2_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 #delft3d
 # NOTE: we need to replace the '~' with the actual path as it causes
 # errors in the delft3d build script
-RUN df -h
+RUN df -h \
+  && ls -l /
 ADD 6906 /delft3d
 RUN cd /delft3d/src \
   && sed --in-place 's/~/\/root/' build_ubuntu1604.sh \
