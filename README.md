@@ -7,7 +7,7 @@ Dockerfile for Delft3d Tagged version 6906
 	cd ~/Documents/Docker/Delft3d
 	```
 
-2. Checkout tags version 6906
+2. Checkout tags version 6906 (alternative command : svn checkout https://svn.oss.deltares.nl/repos/delft3d/tags/delft3d4/6906/)
 	
 	```
 	wget --user=[user_name] --password=[user_password] -r --no-parent https://svn.oss.deltares.nl/repos/delft3d/tags/delft3d4/6906/
